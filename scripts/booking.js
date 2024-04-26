@@ -2,7 +2,7 @@
 // useful variables might be: the cost per day, the number of days selected, and elements on the screen that will be clicked or will need to be modified. 
 // Do any of these variables need to be initialized when the page is loaded? 
 // When do they need to be reset or updated?
-let cost_per_day = 0;
+let cost_per_day = 35;
 let number_per_day = 0;
 
 let monday = document.getElementById("monday");
@@ -15,7 +15,7 @@ let half_day = document.getElementById("half");
 let full_day = document.getElementById("full");
 let clear_day = document.getElementById("clear-button");
 
-cost = document.getElementById("calculated-cost")
+let cost = document.getElementById("calculated-cost")
 
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
@@ -72,11 +72,9 @@ function clear_button() {
     wednesday.classList.remove("clicked");
     friday.classList.remove("clicked");
 
-    cost_per_day = 0;
     number_per_day = 0;
 
     calculation();
-
 }
 clear_day.addEventListener("click", clear_button);
 
@@ -110,6 +108,6 @@ full_day.addEventListener("click", full_days_selected);
 /********* calculate *********/
 // when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
 function calculation() {
-    calculated_cost = cost_per_day * number_of_days;
+    let calculated_cost = cost_per_day * number_per_day;
     cost.innerHTML = calculated_cost;
 }
