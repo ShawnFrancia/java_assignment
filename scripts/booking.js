@@ -15,6 +15,8 @@ let half_day = document.getElementById("half");
 let full_day = document.getElementById("full");
 let clear_day = document.getElementById("clear-button");
 
+cost = document.getElementById("calculated-cost")
+
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
 // added challenge: don't update the dayCounter if the same day is clicked more than once. hint: .classList.contains() might be helpful here!
@@ -109,5 +111,5 @@ full_day.addEventListener("click", full_days_selected);
 // when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
 function calculation() {
     calculated_cost = cost_per_day * number_of_days;
-    document.getElementById("calculated-cost").innerHTML = calculated_cost;
+    cost.innerHTML = calculated_cost;
 }
