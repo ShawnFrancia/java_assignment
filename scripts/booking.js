@@ -15,9 +15,6 @@ let half_day = document.getElementById("half");
 let full_day = document.getElementById("full");
 let clear_day = document.getElementById("clear-button");
 
-
-
-
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
 // added challenge: don't update the dayCounter if the same day is clicked more than once. hint: .classList.contains() might be helpful here!
@@ -26,7 +23,7 @@ let clear_day = document.getElementById("clear-button");
 function monday_click() {
     //clicked class in css***
     monday.classList.add("clicked");
-    number_per_day += 1
+    number_per_day += 1;
     calculation();
 }
 monday.addEventListener("click", monday_click);
@@ -34,7 +31,7 @@ monday.addEventListener("click", monday_click);
 function tuesday_click() {
     //clicked class in css***
     tuesday.classList.add("clicked");
-    number_per_day += 1
+    number_per_day += 1;
     calculation();
 }
 tuesday.addEventListener("click", tuesday_click);
@@ -42,21 +39,24 @@ tuesday.addEventListener("click", tuesday_click);
 function wednesday_click() {
     //clicked class in css***
     wednesday.classList.add("clicked");
-    number_per_day += 1
+    number_per_day += 1;
+    calculation();
 }
 wednesday.addEventListener("click", wednesday_click);
 
 function thursday_click() {
     //clicked class in css***
     thursday.classList.add("clicked");
-    number_per_day += 1
+    number_per_day += 1;
+    calculation();
 }
 thursday.addEventListener("click", thursday_click);
 
 function friday_click() {
     //clicked class in css***
     friday.classList.add("clicked");
-    number_per_day += 1
+    number_per_day += 1;
+    calculation();
 }
 friday.addEventListener("click", friday_click);
 
@@ -108,7 +108,6 @@ full_day.addEventListener("click", full_days_selected);
 /********* calculate *********/
 // when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
 function calculation() {
-    let calculated_cost = cost_per_day * number_per_day;
+    calculated_cost = cost_per_day * number_of_days;
     document.getElementById("calculated-cost").innerHTML = calculated_cost;
 }
-
