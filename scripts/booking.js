@@ -26,6 +26,7 @@ let clear_day = document.getElementById("clear-button");
 function monday_click() {
     //clicked class in css***
     monday.classList.add("clicked");
+    number_per_day += 1
     calculation();
 }
 monday.addEventListener("click", monday_click);
@@ -33,6 +34,7 @@ monday.addEventListener("click", monday_click);
 function tuesday_click() {
     //clicked class in css***
     tuesday.classList.add("clicked");
+    number_per_day += 1
     calculation();
 }
 tuesday.addEventListener("click", tuesday_click);
@@ -40,18 +42,21 @@ tuesday.addEventListener("click", tuesday_click);
 function wednesday_click() {
     //clicked class in css***
     wednesday.classList.add("clicked");
+    number_per_day += 1
 }
 wednesday.addEventListener("click", wednesday_click);
 
 function thursday_click() {
     //clicked class in css***
     thursday.classList.add("clicked");
+    number_per_day += 1
 }
 thursday.addEventListener("click", thursday_click);
 
 function friday_click() {
     //clicked class in css***
     friday.classList.add("clicked");
+    number_per_day += 1
 }
 friday.addEventListener("click", friday_click);
 
@@ -103,28 +108,6 @@ full_day.addEventListener("click", full_days_selected);
 /********* calculate *********/
 // when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
 function calculation() {
-    number_per_day = 0;
-
-    if (monday.classList.contains("clicked") == true) { 
-        number_per_day += 1; 
-    }
-
-    if (tuesday.classList.contains("clicked") == true) { 
-        number_per_day += 1; 
-    }
-
-    if (wednesday.classList.contains("clicked") == true) { 
-        number_per_day += 1; 
-    } 
-
-    if (thursday.classList.contains("clicked") == true) {
-        number_per_day += 1;
-    }
-
-    if (friday.classList.contains("clicked") == true) {
-        number_per_day += 1;
-    }
-
     let calculated_cost = cost_per_day * number_per_day;
     document.getElementById("calculated-cost").innerHTML = calculated_cost;
 }
